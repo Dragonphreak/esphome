@@ -9,3 +9,25 @@ substitutions:
 spi: !remove
 
 i2c: !remove
+
+light:
+- id: neopixels
+  platform: neopixelbus
+  type: GRB
+  variant: WS2811
+  pin: GPIO0
+  num_leds: 8
+  name: "neopixels"
+  effects:
+  - addressable_rainbow:
+      name: "Rainbow"
+
+
+esphome:
+  on_boot:
+    priority: 600
+    then:
+    - light.turn_on:
+        id: neopixels
+        brightness: 35%
+        effect: "Rainbow"
