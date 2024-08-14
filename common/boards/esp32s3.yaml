@@ -1,0 +1,29 @@
+esphome:
+  platformio_options:
+    board_build.flash_mode: dio
+    # board_build.f_flash: 40000000L
+    # board_build.flash_size: 4MB
+
+esp32:
+  board: esp32-s3-devkitc-1
+  variant: esp32s3
+  framework:
+    type: esp-idf
+    version: recommended
+    sdkconfig_options:
+      COMPILER_OPTIMIZATION_SIZE: y
+
+i2c:
+- id: i2c_0
+  scl: GPIO0
+  sda: GPIO1
+  scan: true
+- id: i2c_1
+  scl: GPIO2
+  sda: GPIO3
+  scan: true
+
+spi:
+- id: spi_0
+  mosi_pin: GPIO11
+  clk_pin: GPIO12
