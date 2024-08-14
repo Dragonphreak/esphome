@@ -1,0 +1,11 @@
+packages:
+  base: !include common/base.yaml
+  board: !include common/boards/esp32c3-arduino.yaml
+
+substitutions:
+  device: breadboard
+  name: "Breadboard Example"
+
+spi: !remove
+
+i2c: !remove

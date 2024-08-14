@@ -1,0 +1,8 @@
+packages:
+  uptime: !include sensors/uptime.yaml
+
+esphome:
+  name: esp-${device}
+  friendly_name: ${name}
+
+logger:
