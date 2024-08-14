@@ -1,0 +1,4 @@
+sensor:
+- id: sensor_uptime
+  platform: uptime
+  name: "Uptime"
