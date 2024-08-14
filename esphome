@@ -1,0 +1,9 @@
+#!/bin/sh
+set -e
+cd "$(dirname "${0}")"
+set -x
+docker run \
+    -it --rm --privileged \
+    -v "${PWD}":/config \
+    -v "${PWD}/cache":/cache \
+    ghcr.io/esphome/esphome "${@}"
